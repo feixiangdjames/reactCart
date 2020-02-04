@@ -10,4 +10,4 @@ class NavTop extends React.Component{
     }
 };
 
-export default withRouter(connect(mapStateToProps,mapDispathToProps)(NavTop));
+export default withRouter(connect()(NavTop));

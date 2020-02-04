@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-class Mycourse extends React.Component{
+class MyCourse extends React.Component{
     constructor(props,context){
         super(props,context)
     }
@@ -9,4 +9,4 @@ class Mycourse extends React.Component{
     }
 };
 
-export default connect(mapStateToProps,mapDispathToProps)(Mycourse);
+export default connect()(MyCourse);

@@ -9,4 +9,4 @@ class Person extends React.Component{
     }
 };
 
-export default connect(mapStateToProps,mapDispathToProps)(Person);
+export default connect()(Person);

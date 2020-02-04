@@ -10,4 +10,4 @@ class NavBottom extends React.Component{
     }
 };
 
-export default withRouter(connect(mapStateToProps,mapDispathToProps)(NavBottom));
+export default withRouter(connect()(NavBottom));

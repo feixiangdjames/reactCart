@@ -7,7 +7,7 @@ import store from './redux';
 import {} from 'antd';
 /*base CSS*/
 import './static/css/reset.min.css';
-import './static/css/common.sass';
+import './static/css/common.scss';
 import NavTop from './component/NavTop';
 import NavBottom from './component/NavBottom';
 import Home from './router/Home.js';
@@ -21,11 +21,10 @@ ReactDOM.render(<Provider store={store}>
             {/*MAIN =>ROUTER*/}
             <main className="container">
                 <Switch>
-                    <Route path='/' exact component={Home}/>
                     <Route path='/course' component={Home}/>
                     <Route path='/mycourse' component={Mycourse}/>
                     <Route path='/person' component={Person}/>
-                    <Redirect to='/?from=404'/>
+                    <Redirect to='/course'/>
                 </Switch>
             </main>
             <NavBottom/>

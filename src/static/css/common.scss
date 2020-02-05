@@ -1,0 +1,85 @@
+@import "~antd/dist/antd.css";
+$BG:#2A2A2A;
+html{
+  font-size: 100px;
+}
+#root{
+  margin:0 auto;
+  max-width:750px;
+}
+
+.headerNavBox{
+  position: fixed;
+  width: 100%;
+  top:0;
+  left:0;
+  z-index: 99;
+  height:1.12rem;
+  line-height:1.12rem;
+  background: $BG;
+  color: aliceblue;
+  .homeBox{
+    height:100%;
+    .baseBox{
+      display: flex;
+      justify-content: space-between;
+      height:100%;
+      .logo{
+        width:1rem;
+        height:1.12rem;
+        font-size:0;
+        background-size:100% 100%;
+        background-image:url("../image/logo.png");
+        margin-left: 10px;
+      }
+      .icon{
+        font-size: .6rem;
+        margin-top: .2rem;
+        margin-right: .1rem;
+      }
+    }
+    .filterBox{
+      position: absolute;
+      width: 100%;
+      top:1.1rem;
+      padding: 0 .56rem;
+      background: $BG;
+      li{
+        line-height:1.12rem;
+        text-align: center;
+        font-size: .3rem;
+        border-top:.02rem solid lighten($BG,20%)
+      }
+    }
+  }
+}
+.navBottom{
+position: fixed;
+  z-index:9999;
+  left:0;
+  bottom:0;
+  width: 100%;
+  height: 1.12rem;
+  border-top:.02rem solid #D5D5D5;
+  display: flex;
+  a{
+   color: black;
+     flex:1;
+    text-align: center;
+    i{
+      margin-top:.2rem;
+      display:block;
+      font-size: .5rem;
+    }
+    span{
+      height:.4rem;
+      display: block;
+    }
+    &.active{
+      color: #9D0800;
+    }
+  }
+}
+.container{
+  padding: 1.12rem 0 1.14rem 0;
+}

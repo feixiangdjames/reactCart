@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Qs from 'qs';
 axios.defaults.baseURL='http://localhost:8000';
-axios.defaults.withCredentials=true;//cross+COOKIE
+axios.defaults.withCredentials=true;//CORS+COOKIE
 axios.defaults.transformRequest=(data={})=>Qs.stringify(data);
 axios.interceptors.response.use(result=>result.data);
 

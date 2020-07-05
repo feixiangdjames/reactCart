@@ -7,16 +7,21 @@ import Login from './person/Login';
 import Register from './person/Register';
 import Tip from './person/Tip';
 
+import '../static/css/person.scss'
 import {verifyLogin} from '../api/person';
 class Person extends React.Component{
     constructor(props,context){
         super(props,context);
         this.state={isLogin:false};
     }
-    async UNSAFE_componentWillMount(){
+    async componentWillMount(){
         let result=await verifyLogin();
         let isLogin=parseFloat(result.code)===0?true:false;
-        console.log(isLogin);
+        this.setState({isLogin});
+    }
+    async componentWillReceiveProps(){
+        let result=await verifyLogin();
+        let isLogin=parseFloat(result.code)===0?true:false;
         this.setState({isLogin});
     }
     render(){
@@ -25,7 +30,6 @@ class Person extends React.Component{
                 <Route path='/person/info' render={
                     ()=>{
                 if(this.state.isLogin){
-                    console.log(1);
                     return <Info/>}
                 return <Tip/>
                 }

@@ -5,7 +5,7 @@ import {Icon} from 'antd';
 /*TRANSITION*/
 import Transition from 'react-transition-group/Transition';
 
-const duration=300,
+const duration=500,
     defaultStyle={
     transition:`opacity ${duration}ms`,
         opacity:0
@@ -14,10 +14,9 @@ const duration=300,
     entering:{opacity:0},
         entered:{opacity:1}};
 
-
 class NavTop extends React.Component{
     constructor(props,context){
-        super(props,context)
+        super(props,context);
         this.state={
             in:false
         }
@@ -28,14 +27,15 @@ class NavTop extends React.Component{
             <div className="baseBox">
                 <h1 className='logo'>ShowTime</h1>
                 <Icon type="bars" className='icon' onClick={ev=>{
-                this.setState({in:!this.state.in})
+                    this.setState({in:!this.state.in})
                 }
                 }/>
             </div>
             <Transition in={this.state.in} timeout={0}>
                 {
                     state=>{
-                        return <ul className='filterBox' style={{...defaultStyle,...transitionStyles[state]}}>
+                        return <ul className='filterBox' style={{...defaultStyle,...transitionStyles[state],
+                        display:this.state.in?'block':'none'}}>
                             <li>ALL</li>
                             <li>REACT</li>
                             <li>HTML</li>
